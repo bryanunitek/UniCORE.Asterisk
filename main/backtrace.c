@@ -72,6 +72,8 @@
 
 #include <pthread.h>
 
+#include <stdbool.h>
+
 /* simple definition of S_OR so we don't have include strings.h */
 #define S_OR(a, b) (a && a[0] != '\0') ? a : b
 
@@ -127,7 +129,7 @@ static void process_section(bfd *bfdobj, asection *section, void *obj)
 	bfd_vma offset;
 	bfd_vma vma;
 	bfd_size_type size;
-	bfd_boolean line_found = 0;
+	bool line_found = 0;
 	const char *fn;
 	int inlined = 0;
 
